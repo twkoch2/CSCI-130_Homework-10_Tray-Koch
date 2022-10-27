@@ -21,14 +21,16 @@ int main()
   const int MaxLength = 17; //need space for trailing null
   char Word[MaxLength] = {'0'};  //create matrix and initalize
   cin >> Word;
-  printArray(Word, MaxLength);
+  printArray(Word, MaxLength);// comment out for Kattis
   
 
 
   //read in second string of letters (guessing order)
-  const int GuessLength = 26;
+  const int GuessLength = 27;
   char GuessOrder[GuessLength] = {'0'};
-  void fillArray(char GuessOrder, int GuessLength);
+  cin >> GuessOrder; //array will be filled
+  cout << endl; //comment out for kattis
+  printArray(GuessOrder, MaxLength);  //comment out for Kattis
 
   //use a function to compare the two matricies
   
@@ -48,20 +50,7 @@ int main()
 
 //////////user defined functions/////////////
 
-//fill second array with order of guesses
-void fillArray(char list[], int listSize)
-{
-  cout << "Enter" << listSize << " integers: "; //comment out for Kattis
 
-  int index;
-
-  for(index = 0; index < listSize; index++)
-    {
-      cin >> list[index];
-    }
-
-  return;
-}
 
 //modified seq search from MyArrayFunctions
 int seqSearch(const int list[], int listSize, int searchItem)
