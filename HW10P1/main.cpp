@@ -30,7 +30,7 @@ int main()
   char GuessOrder[GuessLength] = {'0'};
   cin >> GuessOrder; //array will be filled
   cout << endl; //comment out for kattis
-  printArray(GuessOrder, MaxLength);  //comment out for Kattis
+  printArray(GuessOrder, GuessLength);  //comment out for Kattis
 
   //use a function to compare the two matricies
   
