@@ -1,6 +1,6 @@
 /***********************************************************************
 Programmer: Tray Koch
-Date Modified: 10/26/2022
+Date Modified: 10/27/2022
 Description: This program was written to solve the Kattis problem Hangman. This code takes in a word and a permutation of the alphabet which acts as the guessing string. This code must determine if the player will run out of guesses(10 allowed) before they solve the puzzle.
 ***********************************************************************/
 
@@ -11,13 +11,18 @@ using namespace std;
 
 //////////Prototype Functions//////////
 void fillArray(char list[], int listSize);
+void printArray (char list[], int listSize);
 
 
 ///////////Main///////////
 int main()
 {
   //take in first string (word to be guesed)
-  char Word[] = {'0'};  //create matrix and initalize
+  const int MaxLength = 17; //need space for trailing null
+  char Word[MaxLength] = {'0'};  //create matrix and initalize
+  cin >> Word;
+  printArray(Word, MaxLength);
+  
 
 
   //read in second string of letters (guessing order)
@@ -81,4 +86,19 @@ int seqSearch(const int list[], int listSize, int searchItem)
     cout << "Item not found. " << endl;
     return -1; //not an array location, used as flag for unsuccessful operation
   }
+}
+
+//print array to check inputs
+void printArray (char list[], int listSize)
+{
+  int index;
+
+  for (index = 0; index < listSize; index++)
+  {
+     cout << list[index] << " ";
+    
+  }
+ 
+  cout << endl;
+  return;
 }
