@@ -66,8 +66,10 @@ int seqSearch(char list[], int listSize, char searchItem)
     if(list[loc] == searchItem)
       found = true; //kicks you out of loop
 
-    if (list[loc] == '\000')
-      found = true; //trailing null values do not affect counter
+    if(list[loc] == '\000')
+    {
+      loc = listSize + 1; //way to exit the loop w/o affecting counter
+    }
     
     else
       loc++;
@@ -78,7 +80,6 @@ int seqSearch(char list[], int listSize, char searchItem)
 
   else
   {
-   // cout << "Item not found. " << endl;
     return 0; 
   }
 }
