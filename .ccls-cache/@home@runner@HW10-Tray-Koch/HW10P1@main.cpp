@@ -33,34 +33,28 @@ int main()
   //printArray(GuessOrder, GuessLength);  //comment out for Kattis
 
   //use a function to compare the two matricies
+  int failCount = 0; //will be a counter used to detmine winner
+  
   for (int i = 0; i < GuessLength; i++)
   {
     int result; //used to create if statement and translate result
-    int failCount; //will be a counter use to detmine winner
+
     result = seqSearch(Word, MaxLength, GuessOrder[i]);
 
     if (result == 0)
-      
-    
+      failCount++;
   }
+
+  if (failCount < 10)
+    cout << "WIN";
+  else
+    cout << "LOSE";
   
-
-  
-  
-  
-
-
-
-
-
-
   return 0;
 }
 
 
 //////////user defined functions/////////////
-
-
 
 //modified seq search from MyArrayFunctions
 int seqSearch(char list[], int listSize, char searchItem)
@@ -82,8 +76,8 @@ int seqSearch(char list[], int listSize, char searchItem)
 
   else
   {
-    cout << "Item not found. " << endl;
-    return 0; //not an array location, used as flag for unsuccessful operation
+   // cout << "Item not found. " << endl;
+    return 0; 
   }
 }
 
