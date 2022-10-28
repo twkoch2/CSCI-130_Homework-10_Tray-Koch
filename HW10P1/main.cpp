@@ -12,7 +12,7 @@ using namespace std;
 //////////Prototype Functions//////////
 void fillArray(char list[], int listSize);
 void printArray (char list[], int listSize);
-
+int seqSearch(char list[], int listSize, char searchItem);
 
 ///////////Main///////////
 int main()
@@ -21,7 +21,7 @@ int main()
   const int MaxLength = 17; //need space for trailing null
   char Word[MaxLength] = {'0'};  //create matrix and initalize
   cin >> Word;
-  printArray(Word, MaxLength);// comment out for Kattis
+  //printArray(Word, MaxLength);// comment out for Kattis
   
 
 
@@ -29,10 +29,20 @@ int main()
   const int GuessLength = 27;
   char GuessOrder[GuessLength] = {'0'};
   cin >> GuessOrder; //array will be filled
-  cout << endl; //comment out for kattis
-  printArray(GuessOrder, GuessLength);  //comment out for Kattis
+  //cout << endl; //comment out for kattis
+  //printArray(GuessOrder, GuessLength);  //comment out for Kattis
 
   //use a function to compare the two matricies
+  for (int i = 0; i < GuessLength; i++)
+  {
+    int result; //used to create if statement and translate result
+    int failCount; //will be a counter use to detmine winner
+    result = seqSearch(Word, MaxLength, GuessOrder[i]);
+
+    if (result == 0)
+      
+    
+  }
   
 
   
@@ -53,12 +63,12 @@ int main()
 
 
 //modified seq search from MyArrayFunctions
-int seqSearch(const int list[], int listSize, int searchItem)
+int seqSearch(char list[], int listSize, char searchItem)
 {
   int loc = 0; // start with 1st spot
   bool found = false; //we have not found it yet
 
-  while( (loc < listSize) && (!found))
+  while( (loc < listSize) && (!found) && (searchItem != '0') ) //modified to kick out when end of word is reached
   {
     if(list[loc] == searchItem)
       found = true; //kicks you out of loop
@@ -68,12 +78,12 @@ int seqSearch(const int list[], int listSize, int searchItem)
   }
 
   if (found)
-    return loc;
+    return 1;
 
   else
   {
     cout << "Item not found. " << endl;
-    return -1; //not an array location, used as flag for unsuccessful operation
+    return 0; //not an array location, used as flag for unsuccessful operation
   }
 }
 
