@@ -10,7 +10,6 @@ Description: This program was written to solve the Kattis problem Hangman. This 
 using namespace std;
 
 //////////Prototype Functions//////////
-void fillArray(char list[], int listSize);
 void printArray (char list[], int listSize);
 int seqSearch(char list[], int listSize, char searchItem);
 
