@@ -18,17 +18,16 @@ int main()
 {
   //take in first string (word to be guesed)
   const int MaxLength = 17; //need space for trailing null
-  char Word[MaxLength] = {'0'};  //create matrix and initalize
+  char Word[MaxLength];  //create matrix and initalize
   cin >> Word;
-  //printArray(Word, MaxLength);// comment out for Kattis
+  //printArray(Word, MaxLength); // comment out for Kattis
   
 
 
   //read in second string of letters (guessing order)
   const int GuessLength = 27;
-  char GuessOrder[GuessLength] = {'0'};
+  char GuessOrder[GuessLength];
   cin >> GuessOrder; //array will be filled
-  //cout << endl; //comment out for kattis
   //printArray(GuessOrder, GuessLength);  //comment out for Kattis
 
   //use a function to compare the two matricies
@@ -61,10 +60,14 @@ int seqSearch(char list[], int listSize, char searchItem)
   int loc = 0; // start with 1st spot
   bool found = false; //we have not found it yet
 
-  while( (loc < listSize) && (!found) && (searchItem != '0') ) //modified to kick out when end of word is reached
+  while( (loc < listSize) && (!found))
   {
+    
     if(list[loc] == searchItem)
       found = true; //kicks you out of loop
+
+    if (list[loc] == '\000')
+      found = true; //trailing null values do not affect counter
     
     else
       loc++;
