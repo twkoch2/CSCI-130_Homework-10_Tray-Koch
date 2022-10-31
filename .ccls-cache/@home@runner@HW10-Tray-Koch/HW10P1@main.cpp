@@ -18,7 +18,7 @@ int main()
 {
   //take in first string (word to be guesed)
   const int MaxLength = 17; //need space for trailing null
-  char Word[MaxLength];  //create matrix and initalize
+  char Word[MaxLength] = {'\0'};  //create matrix and initalize
   cin >> Word;
   //printArray(Word, MaxLength); // comment out for Kattis
   
@@ -36,20 +36,21 @@ int main()
   for (int i = 0; i < GuessLength; i++)
   {
     int result; //used to create if statement and translate result
-
+    
     result = seqSearch(Word, MaxLength, GuessOrder[i]);
 
     if (result == 0)
       failCount++;
   }
+    
 
-  if (failCount < 10)
+  if (failCount <= 10)
     cout << "WIN";
   else
     cout << "LOSE";
   
   return 0;
-}
+  }
 
 
 //////////user defined functions/////////////
@@ -59,29 +60,29 @@ int seqSearch(char list[], int listSize, char searchItem)
 {
   int loc = 0; // start with 1st spot
   bool found = false; //we have not found it yet
+  int i; ///value to return
 
   while( (loc < listSize) && (!found))
   {
     
     if(list[loc] == searchItem)
-      found = true; //kicks you out of loop
-
-    if(list[loc] == '\000')
     {
-      loc = listSize + 1; //way to exit the loop w/o affecting counter
+      found = true; //kicks you out of loop
+      i = 1;
+    }
+      
+
+    if (list[loc] == '\0')
+    {
+      found = true; //kicks you out of loop
+      i = 0;
     }
     
     else
       loc++;
   }
 
-  if (found)
-    return 1;
-
-  else
-  {
-    return 0; 
-  }
+  return i;
 }
 
 //print array to check inputs
@@ -97,4 +98,57 @@ void printArray (char list[], int listSize)
  
   cout << endl;
   return;
+}
+
+//code from hint function on D2L
+
+// find the unique values in a string
+int findNumOfUniqueCharInStr(string myString) 
+{
+  const int L = myString.length();
+
+  char unique[L]; // set all to NULL
+
+  int n, k;
+
+  // setup unique to store the first value of the string and then
+
+  // all NULLs
+
+  unique[0] = myString[0];
+
+  // initialize all other spots in unique to be NULL aka '\0'
+
+  for (n = 1; n < L; n++) 
+  {
+    unique[n] = '\0';
+  }
+
+  int j = 1;
+
+  bool FLAG;
+
+  // fill unique
+
+  for (n = 1; n < L; n++) 
+  {
+    FLAG = false; // meaning it does not exist
+
+    for (k = 0; k < L; k++) {
+
+      if (myString[n] == unique[k]) // then found it does exist
+        FLAG = true;
+    }
+
+    // if it didn't exist we will add it in to unique
+
+    if (FLAG == false) 
+    {
+      unique[j] = myString[n];
+
+      j++;
+    }
+  }
+
+  return j;
 }
