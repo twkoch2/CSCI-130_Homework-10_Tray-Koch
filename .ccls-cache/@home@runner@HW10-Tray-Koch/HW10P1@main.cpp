@@ -12,6 +12,7 @@ using namespace std;
 //////////Prototype Functions//////////
 void printArray (char list[], int listSize);
 int seqSearch(char list[], int listSize, char searchItem);
+int findNumOfUniqueCharInStr(string myString);
 
 ///////////Main///////////
 int main()
@@ -32,12 +33,18 @@ int main()
 
   //use a function to compare the two matricies
   int failCount = 0; //will be a counter used to detmine winner
+
+  //use a function to find the number of distince characters
+  int distinct = findNumOfUniqueCharInStr(Word);
   
   for (int i = 0; i < GuessLength; i++)
   {
     int result; //used to create if statement and translate result
     
     result = seqSearch(Word, MaxLength, GuessOrder[i]);
+
+    if (i == distinct + 10)
+      i = GuessLength + 2; //kicks out of for loop
 
     if (result == 0)
       failCount++;
