@@ -11,7 +11,7 @@ using namespace std;
 
 //prototype functions
 void fillArray(int list[], int listSize);
-void printArray (const int list[], int listSize);
+void printArray (int list[], int listSize);
 int numberOfGIS (int list[], int listSize);
 void FinalGIS (int list[], int listG[], int listSize, int listSizeG);
 
@@ -40,7 +40,7 @@ int main()
   FinalGIS(permutationA, finalGIS, N, M);
 
   //use a function to print updated finalGIS array
-  printArray(finalGIS, M);
+  printArray(finalGIS, M);  
   
   return 0;
 }
