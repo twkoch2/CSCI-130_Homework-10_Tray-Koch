@@ -9,8 +9,34 @@ Description: This program was written to solve the Kattis problem Greedily Incre
 
 using namespace std;
 
+//prototype functions
+void fillArray(int list[], int listSize);
+
 int main()
 {
-  const int = 
-  int permutatuionA 
+  //read in length of permutation
+  int a;
+  cin >> a;
+
+  //set up array to capture input sequence
+  const int N = a;
+  int permutationA[N]; //array to store sequence
+
+}
+
+//user-defined functions
+
+//function to fill array
+void fillArray(int list[], int listSize)
+{
+  cout << "Enter" << listSize << " integers: "; //comment out for Kattis
+
+  int index;
+
+  for(index = 0; index < listSize; index++)
+    {
+      cin >> list[index];
+    }
+
+  return;
 }
