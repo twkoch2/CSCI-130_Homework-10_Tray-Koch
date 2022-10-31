@@ -33,6 +33,7 @@ int main()
 
   //use a function to compare the two matricies
   int failCount = 0; //will be a counter used to detmine winner
+  int foundCount = 0; //counter for found values
 
   //use a function to find the number of distince characters
   int distinct = findNumOfUniqueCharInStr(Word);
@@ -43,15 +44,18 @@ int main()
     
     result = seqSearch(Word, MaxLength, GuessOrder[i]);
 
-    if (i == distinct + 10)
+    if (foundCount == distinct)
       i = GuessLength + 2; //kicks out of for loop
+
+    if (result == 1)
+      foundCount++;
 
     if (result == 0)
       failCount++;
   }
     
 
-  if (failCount <= 10)
+  if (failCount < 10)
     cout << "WIN";
   else
     cout << "LOSE";
