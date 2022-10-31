@@ -13,6 +13,7 @@ using namespace std;
 void fillArray(int list[], int listSize);
 void printArray (const int list[], int listSize);
 int numberOfGIS (int list[], int listSize);
+void FinalGIS (int list[], int listG[], int listSize, int listSizeG);
 
 int main()
 {
@@ -32,9 +33,16 @@ int main()
   b = numberOfGIS(permutationA, N);
   const int M = b;
 
-  //create an output array for the final 
-  
+  //create an output array for the final answer
+  int finalGIS[M];
 
+  //use a function to fill the finalGIS array
+  FinalGIS(permutationA, finalGIS, N, M);
+
+  //use a function to print updated finalGIS array
+  printArray(finalGIS, M);
+  
+  return 0;
 }
 
 //user-defined functions
@@ -85,4 +93,27 @@ int numberOfGIS (int list[], int listSize) //modified indexLargestElement functi
   }
 
   return GISCount;
+}
+
+//function to create fina output array
+void FinalGIS (int list[], int listG[], int listSize, int listSizeG) //modified indexLargestElement function and numberOfGTS function
+{
+  int GISCount = 1; //first value displayed
+  int maxIndex = 0; 
+
+  //hard code first location of listG to display first element of list
+  listG[0] = list [0];
+  
+
+  for (int index = 1; index < listSize; index++) //index is 1 since 1st integer always printed
+  {
+    if (list[maxIndex] < list[index])
+    {
+      maxIndex = index;
+      GISCount++;
+    }
+      
+  }
+
+  return;
 }
