@@ -98,7 +98,7 @@ int numberOfGIS (int list[], int listSize) //modified indexLargestElement functi
 //function to create fina output array
 void FinalGIS (int list[], int listG[], int listSize, int listSizeG) //modified indexLargestElement function and numberOfGTS function
 {
-  int GISCount = 1; //first value displayed
+  int GISIndex = 1; //first value displayed
   int maxIndex = 0; 
 
   //hard code first location of listG to display first element of list
@@ -110,10 +110,9 @@ void FinalGIS (int list[], int listG[], int listSize, int listSizeG) //modified 
     if (list[maxIndex] < list[index])
     {
       maxIndex = index;
-      GISCount++;
+      GISIndex++;
+      listG[GISIndex] = list[index];
     }
-      
   }
-
   return;
 }
