@@ -55,10 +55,10 @@ int main()
   }
     
 
-  if (failCount < 10)
-    cout << "WIN";
+  if (failCount <= 10)
+    cout << "WIN" << endl;
   else
-    cout << "LOSE";
+    cout << "LOSE" << endl;
   
   return 0;
   }
