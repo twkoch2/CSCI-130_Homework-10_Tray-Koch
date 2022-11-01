@@ -38,9 +38,9 @@ void arr(int (*val) [3])
   cout << endl << *(*val) + 1 << endl;
   
   //part b (is the notation val[1][2] valid within the function?)
-  cout << "\nThe output of the val[1][2] in the function is arr() in this code is as follows: ";
-  cout << "val[1][2] = " << val[1][2];
+  cout << "\nThe output of val[1][2] in the function arr() \nin this code is as follows: ";
+  cout << "val[1][2] = " << val[1][2] << endl;
 
-  cout << endl << "Since this notation returns an answer that would be expected when returning the value in the index [1][2] of the array, this notation must be valid in the function arr()." << endl;
+  cout << endl << "Since this notation returns an answer that would be \nexpected when returning the value in the index [1][2] \nof the array, this notation must be valid in the \nfunction arr()." << endl;
   return;
 }
