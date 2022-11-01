@@ -39,6 +39,9 @@ int main()
   //use a function to fill the finalGIS array
   FinalGIS(permutationA, finalGIS, N, M);
 
+  //output length of GIS first
+  cout << M << endl;
+
   //use a function to print updated finalGIS array
   printArray(finalGIS, M);  
   
@@ -98,13 +101,13 @@ int numberOfGIS (int list[], int listSize) //modified indexLargestElement functi
 //function to create fina output array
 void FinalGIS (int list[], int listG[], int listSize, int listSizeG) //modified indexLargestElement function and numberOfGTS function
 {
-  int GISIndex = 1; //first value displayed
+  int GISIndex = 0; //first value displayed
   int maxIndex = 0; 
 
   //hard code first location of listG to display first element of list
-  listG[0] = list [0];
+  listG[0] = list[0];
   
-
+//for loop to search and create GIS array
   for (int index = 1; index < listSize; index++) //index is 1 since 1st integer always printed
   {
     if (list[maxIndex] < list[index])
