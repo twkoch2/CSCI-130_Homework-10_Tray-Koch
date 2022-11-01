@@ -19,6 +19,7 @@ int main()
   for (int i;i < NUMS; i++)
     total = total + *nPt++;
 
+  //while loop included below was replaced by above for loop
   /*
   while (nPt < nums + NUMS)
     total += *nPt++;
