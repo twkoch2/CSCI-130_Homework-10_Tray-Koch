@@ -31,6 +31,13 @@ int main()
   cout << "Please prepare to enter car fleet data. \nRequired information includes car number, miles driven, and gallons of gas used." << endl;
 
   //turn single struct into an array of structs to hold all 5 data types
+  CarRec CarFleet[NUMCARS]; //array of structs initalized
+
+  //for loop to fill array of structs 
+  for (int i = 0; i < NUMCARS; i++)
+  {
+    cout << "Please enter the car number: ";
+  }
 
   
 
