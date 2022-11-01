@@ -16,7 +16,7 @@ int main()
   
   nPt = nums;    // store address of nums[0] in nPt  
 
-  for (int *nPt; nPt < (nums + NUMS); nPt++)
+  for (int i;i < NUMS; i++)
     total = total + *nPt++;
 
   /*
