@@ -6,6 +6,7 @@ Description: This program was written to solve the Bronson Exercises 10.3 Exerci
 
 #include <iostream>
 using namespace std;
+
 int main()
 {  
   const int NUMS = 5;
