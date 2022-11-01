@@ -15,9 +15,25 @@ using namespace std;
 
 const int NUMCARS = 5;  // maximum number of cars
 
+//part a (single struct has been declared which is suitable for the chart in the problem statement)
+
 struct CarRec           // this is a global declaration
 {  
   int carNo;
-  int milesDriven;
-  int gallonsUsed;
+  double milesDriven;
+  double gallonsUsed;
 };
+
+int main()
+{
+  //prompt user input for data in the struct
+
+  cout << "Please prepare to enter car fleet data. \nRequired information includes car number, miles driven, and gallons of gas used." << endl;
+
+  //turn single struct into an array of structs to hold all 5 data types
+
+  
+
+
+  return 0;
+}
