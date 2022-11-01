@@ -16,8 +16,8 @@ int main()
   
   nPt = nums;    // store address of nums[0] in nPt  
 
-  for (int *nPt; nPt < nums + NUMS; nPt++)
-    total += *nPt;
+  for (int *nPt; nPt < (nums + NUMS); nPt++)
+    total = total + *nPt++;
 
   /*
   while (nPt < nums + NUMS)
