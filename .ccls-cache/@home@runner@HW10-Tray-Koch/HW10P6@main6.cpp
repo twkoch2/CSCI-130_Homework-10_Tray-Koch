@@ -26,7 +26,7 @@ struct CarRec           // this is a global declaration
 
 //prototype functions 
 void PrintStruct(CarRec CarFleet[], const int NUMCARS);
-
+void PrintMPG(CarRec CarFleet[], const int NUMCARS);
 
 
 int main()
@@ -41,16 +41,21 @@ int main()
   //for loop to fill array of structs 
   for (int i = 0; i < NUMCARS; i++)
   {
-    cout << "Please enter the car number: ";
+    cout << "Please enter the car number for vehicle " << i + 1 << ": ";
     cin >> CarFleet[i].carNo;
-    cout << "Please enter the miles driven: ";
+    cout << "Please enter the miles driven by vehicle "<< i + 1 << ": ";
     cin >> CarFleet[i].milesDriven;
-    cout << "Please enter the gallons of gas used: ";
+    cout << "Please enter the gallons of gas used by vehicle " << i + 1 << ": ";
     cin >> CarFleet[i].gallonsUsed;
   }
 
   //display table of results back to user
   PrintStruct(CarFleet, NUMCARS);
+
+  //create report of cars to display MPG of each
+  cout << "Generating MPG report. Please wait..." << endl;
+  PrintMPG(CarFleet, NUMCARS);
+  
 
   
 
@@ -73,4 +78,32 @@ void PrintStruct(CarRec CarFleet[], const int NUMCARS)
   }
   
   return;
+}
+
+//this function prints a report of the MPG for each car and an overall MPG
+void PrintMPG(CarRec CarFleet[], const int NUMCARS)
+{
+  cout << "\n-------Fleet MPG Report-------" << endl;
+  cout << "  Car Number            MPG " << endl;
+
+  //create a double to calculate MPG
+  double MPG;
+  double MilesDrivenTotal = 0; //used to determine fleet MPG
+  double GallonsUsedTotal = 0; //used to determine fleet MPG
+
+  //use a for loop to make calcualtion and display to the console
+  for(int i = 0; i < NUMCARS; i++)
+  {
+    //calculate MPG for each car
+    MPG = (CarFleet[i].milesDriven)/(CarFleet[i].gallonsUsed);
+    MilesDrivenTotal = MilesDrivenTotal + CarFleet[i].milesDriven;
+    GallonsUsedTotal = GallonsUsedTotal + CarFleet[i].gallonsUsed;
+    
+    //print car number and MPG
+    cout << setw(6) << CarFleet[i].carNo << setw(20) << MPG << endl;
+  }
+
+  //create a overall mpg to display
+  cout << "The fleet MPG is: " << endl;
+  
 }
