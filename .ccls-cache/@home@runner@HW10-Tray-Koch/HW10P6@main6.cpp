@@ -33,7 +33,7 @@ int main()
 {
   //prompt user input for data in the struct
 
-  cout << "Please prepare to enter car fleet data. \nRequired information includes car number, miles driven, and gallons of gas used." << endl;
+  cout << "Please prepare to enter car fleet data for 5 vehicles. \nRequired information includes car number, miles driven, and gallons of gas used." << endl;
 
   //turn single struct into an array of structs to hold all 5 data types
   CarRec CarFleet[NUMCARS]; //array of structs initalized
@@ -41,11 +41,11 @@ int main()
   //for loop to fill array of structs 
   for (int i = 0; i < NUMCARS; i++)
   {
-    cout << "\nPlease enter the car number: ";
+    cout << "Please enter the car number: ";
     cin >> CarFleet[i].carNo;
-    cout << "\nPlease enter the miles driven: ";
+    cout << "Please enter the miles driven: ";
     cin >> CarFleet[i].milesDriven;
-    cout << "\nPlease enter the gallons of gas used";
+    cout << "Please enter the gallons of gas used: ";
     cin >> CarFleet[i].gallonsUsed;
   }
 
@@ -63,13 +63,13 @@ int main()
 //this function is used to print the struct
 void PrintStruct(CarRec CarFleet[], const int NUMCARS)
 {
-  cout << "You have entered the following information..." << endl;
-  cout << "Car Number      Miles Driven     Gallons Used" << endl;
+  cout << "\nYou have entered the following information..." << endl;
+  cout << "Car Number     Miles Driven     Gallons Used" << endl;
 
   //for loop to print out array of structs
   for(int i = 0; i < NUMCARS; i++)
   {
-    cout << setw(6) << CarFleet[i].carNo << setw(6) << CarFleet[i].milesDriven << setw(6) << CarFleet[i].gallonsUsed << endl;
+    cout << endl << setw(6) << CarFleet[i].carNo << setw(16) << CarFleet[i].milesDriven << setw(16) << CarFleet[i].gallonsUsed << endl;
   }
   
   return;
