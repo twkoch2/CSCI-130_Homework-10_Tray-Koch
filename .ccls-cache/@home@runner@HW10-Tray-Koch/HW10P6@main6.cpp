@@ -24,6 +24,11 @@ struct CarRec           // this is a global declaration
   double gallonsUsed;
 };
 
+//prototype functions 
+void PrintStruct(CarRec CarFleet[], const int NUMCARS);
+
+
+
 int main()
 {
   //prompt user input for data in the struct
@@ -36,11 +41,36 @@ int main()
   //for loop to fill array of structs 
   for (int i = 0; i < NUMCARS; i++)
   {
-    cout << "Please enter the car number: ";
+    cout << "\nPlease enter the car number: ";
+    cin >> CarFleet[i].carNo;
+    cout << "\nPlease enter the miles driven: ";
+    cin >> CarFleet[i].milesDriven;
+    cout << "\nPlease enter the gallons of gas used";
+    cin >> CarFleet[i].gallonsUsed;
   }
+
+  //display table of results back to user
+  PrintStruct(CarFleet, NUMCARS);
 
   
 
 
   return 0;
+}
+
+//user defined functions
+
+//this function is used to print the struct
+void PrintStruct(CarRec CarFleet[], const int NUMCARS)
+{
+  cout << "You have entered the following information..." << endl;
+  cout << "Car Number      Miles Driven     Gallons Used" << endl;
+
+  //for loop to print out array of structs
+  for(int i = 0; i < NUMCARS; i++)
+  {
+    cout << setw(6) << CarFleet[i].carNo << setw(6) << CarFleet[i].milesDriven << setw(6) << CarFleet[i].gallonsUsed << endl;
+  }
+  
+  return;
 }
