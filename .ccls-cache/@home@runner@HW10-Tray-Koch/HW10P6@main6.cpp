@@ -55,10 +55,6 @@ int main()
   //create report of cars to display MPG of each
   cout << "Generating MPG report. Please wait..." << endl;
   PrintMPG(CarFleet, NUMCARS);
-  
-
-  
-
 
   return 0;
 }
@@ -107,5 +103,6 @@ void PrintMPG(CarRec CarFleet[], const int NUMCARS)
   //create a overall mpg to display
   FleetMPG = (MilesDrivenTotal) / (GallonsUsedTotal);
   cout << "The fleet MPG is: " << FleetMPG << endl;
-  
+
+  return;
 }
