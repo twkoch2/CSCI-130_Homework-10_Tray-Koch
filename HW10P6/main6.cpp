@@ -70,7 +70,7 @@ void PrintStruct(CarRec CarFleet[], const int NUMCARS)
   //for loop to print out array of structs
   for(int i = 0; i < NUMCARS; i++)
   {
-    cout << endl << setw(6) << CarFleet[i].carNo << setw(16) << CarFleet[i].milesDriven << setw(16) << CarFleet[i].gallonsUsed << endl;
+    cout << setw(6) << CarFleet[i].carNo << setw(16) << CarFleet[i].milesDriven << setw(16) << CarFleet[i].gallonsUsed << endl;
   }
   
   return;
