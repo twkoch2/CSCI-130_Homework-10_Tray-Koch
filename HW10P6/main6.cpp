@@ -90,6 +90,7 @@ void PrintMPG(CarRec CarFleet[], const int NUMCARS)
   double MPG;
   double MilesDrivenTotal = 0; //used to determine fleet MPG
   double GallonsUsedTotal = 0; //used to determine fleet MPG
+  double FleetMPG;
 
   //use a for loop to make calcualtion and display to the console
   for(int i = 0; i < NUMCARS; i++)
@@ -104,6 +105,7 @@ void PrintMPG(CarRec CarFleet[], const int NUMCARS)
   }
 
   //create a overall mpg to display
-  cout << "The fleet MPG is: " << endl;
+  FleetMPG = (MilesDrivenTotal) / (GallonsUsedTotal);
+  cout << "The fleet MPG is: " << FleetMPG << endl;
   
 }
